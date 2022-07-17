@@ -35,7 +35,7 @@ function App() {
         <h1>Pokemon Stats</h1>
         <input type="text" 
         onChange={(event) => {
-          setPokemonName(event.target.value)}}
+          setPokemonName(event.target.value.toLowerCase())}}
           />
         <button onClick={searchPokemon}>Search Pokemon</button>
       </div>
@@ -44,10 +44,10 @@ function App() {
         <h1> Please Choose a Pokemon</h1>) 
         : (
          <>
-          <h1>{pokemon.name}</h1>
+          <h1>{pokemon.name.toUpperCase()}</h1>
           <img src ={pokemon.img}/>
           {/* <h3>Species: {pokemon.species}</h3> */}
-          <h4>Type: {pokemon.type}</h4>
+          <h4>Type: {pokemon.type.charAt(0).toUpperCase() + pokemon.type.slice(1)}</h4>
           <h4>Hp: {pokemon.hp}</h4>
           <h4>Attack: {pokemon.attack}</h4>
           <h4>Defense: {[pokemon.defense]}</h4>
