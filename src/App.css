@@ -30,3 +30,19 @@ body {
   font-size: 18px;
   padding-left: 10px;
 }
+
+.Title button {
+  width: 160px;
+  height: 40px;
+  margin: 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  padding-left: 10px;
+  color: white;
+  background-color: orange;
+}
+
+.Title button:hover {
+  cursor: pointer;
+}
