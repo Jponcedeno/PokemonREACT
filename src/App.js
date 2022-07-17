@@ -4,7 +4,16 @@ import Axios from 'axios';
 
 function App() {
   const [pokemonName, setPokemonName] = useState("");
-  const [pokemon, setPokemon] = useState({});
+  const [pokemonChosen, setPokemonChosen] = useState(false);
+  const [pokemon, setPokemon] = useState({
+        name: "", 
+        species: "", 
+        img: "", 
+        hp: "", 
+        attack: "", 
+        defense: "", 
+        type: "",
+  });
 
   const searchPokemon = () => {
     Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`).then((response) => {
@@ -16,9 +25,10 @@ function App() {
         attack: response.data.stats[1].base_stat, 
         defense: response.data.stats[2].base_stat, 
         type: response.data.types[0].type.name,
-      })
-    })
-  }
+      });
+      setPokemonChosen(true);
+    });
+  };
   return (
     <div className='App'>
       <div className='Title'>
@@ -28,6 +38,13 @@ function App() {
           setPokemonName(event.target.value)}}
           />
         <button onClick={searchPokemon}>Search Pokemon</button>
+      </div>
+      <div className='Display'>
+        {!pokemonChosen ? (
+        <h1> Please Choose a Pokemon</h1>) 
+        : (
+        <h1>{pokemonName}</h1>
+        )}
       </div>
     </div>
   );
