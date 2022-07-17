@@ -57,3 +57,8 @@ body {
 .Display h4, h3{
   margin: 10px;
 }
+
+h6 {
+  margin: 0px;
+  margin-top: 10px;
+}

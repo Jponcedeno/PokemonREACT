@@ -37,6 +37,7 @@ function App() {
         onChange={(event) => {
           setPokemonName(event.target.value.toLowerCase())}}
           />
+        <h6>Ex: "Pikachu, Charizard, Snorlax"</h6>
         <button onClick={searchPokemon}>Search Pokemon</button>
       </div>
       <div className='Display'>
