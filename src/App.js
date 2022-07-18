@@ -42,7 +42,7 @@ function App() {
       </div>
       <div className='Display'>
         {!pokemonChosen ? (
-        <h1> Please Choose a Pokemon</h1>) 
+        <h1>Choose your Pokemon!</h1>) 
         : (
          <>
           <h1>{pokemon.name.toUpperCase()}</h1>
